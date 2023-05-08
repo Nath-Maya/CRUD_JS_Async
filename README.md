@@ -10,7 +10,16 @@ Recopilacion de los ejercicios practicos durante el curso de especializacion Fro
 
 ###  📃 Conocimientos Obtenidos
 
-✅  
+✅  Simular un servidor o API con json server. 
+
+✅  Instanciar clases para lograr la comunicacion con API. 
+
+✅  Métodos de **HTTP**:
+   * Create / POST. 
+   * Read / GET.
+   * Ubdate / PUT O PATCH
+   * Delete / Delete
+
 
 
 

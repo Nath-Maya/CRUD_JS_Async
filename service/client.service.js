@@ -33,19 +33,23 @@ const crearNuevaLinea = (nombre,email) => {
    `;
 };
 
-//Crear comunicacion entre el Front-end y Back-end
-const http = new XMLHttpRequest();
+const table = document.querySelector("[data-table]");
+
+const http = new XMLHttpRequest(); //Crear comunicacion entre el Front-end y Back-end
 
 //Abrir http (metodo,url)
 http.open("GET", "http://localhost:3000/perfil");
 
-//Se va a encargar de enviar la peticion al navegador o servidor de la url
-http.send();
+http.send(); //Se va a encargar de enviar la peticion al navegador o servidor de la url
 
 //Ejecutar funcion
 http.onload = () => {
-  const data = http.response;
+  const data = JSON.parse(http.response); //transformar el texto con JSON.
   console.log(data);
+  data.forEach((perfil) => {
+    const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
+    table.appendChild(nuevaLinea);
+  });
 };
 
 console.log(http);

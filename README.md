@@ -10,7 +10,7 @@ Recopilacion de los ejercicios practicos durante el curso de especializacion Fro
 
 ###  📃 Conocimientos Obtenidos
 
-✅  Simular un servidor o API con json server. 
+✅  Simular un servidor o **API** con json server. 
 
 ✅  Instanciar clases para lograr la comunicacion con API. 
 
@@ -19,6 +19,8 @@ Recopilacion de los ejercicios practicos durante el curso de especializacion Fro
    * Read / GET.
    * Ubdate / PUT O PATCH
    * Delete / Delete
+
+✅  Crear Templates.
 
 
 

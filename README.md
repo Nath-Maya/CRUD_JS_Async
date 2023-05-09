@@ -20,7 +20,9 @@ Recopilacion de los ejercicios practicos durante el curso de especializacion Fro
    * Ubdate / PUT O PATCH
    * Delete / Delete
 
-✅  Crear Templates.
+✅  Crear Templates literals y crear un template html.
+
+✅  Refactorizar el codigo utilizando **PROMISES**. 
 
 
 

@@ -32,6 +32,8 @@ const crearNuevaLinea = (nombre, email) => {
    `;
 };
 
+// const table = document.querySelector("[data-table]");
+
 const table = document.querySelector("[data-table]");
 
 //*LISTA DE CLIENTES
@@ -57,9 +59,12 @@ const listaClientes = () => {
   return promise;
 };
 
-console.log(listaClientes());
+listaClientes().then((data) => {
+  console.log(data);
+  data.forEach((perfil) => {
+    const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
+    table.appendChild(nuevaLinea);
+  });
+}).catch((error) => alert("Ocurrio un error"));
 
-// data.forEach((perfil) => {
-//   const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
-//   table.appendChild(nuevaLinea);
-// });
+

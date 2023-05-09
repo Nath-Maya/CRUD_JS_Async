@@ -38,9 +38,10 @@ const crearNuevaLinea = (nombre, email) => {
 const table = document.querySelector("[data-table]");
 
 //*LISTA DE CLIENTES
+//FETCH API
 
 const listaClientes = () => {
-  const promise = new Promise((resolve, reject) => {
+  /*const promise = new Promise((resolve, reject) => {
     //Abrir http (metodo,url)
     const http = new XMLHttpRequest(); //Crear comunicacion entre el Front-end y Back-end
     http.open("GET", "http://localhost:3000/perfil");
@@ -57,6 +58,16 @@ const listaClientes = () => {
     };
   });
   return promise;
+  */
+
+//Reemplaza el codigo de arriba. 
+//!FETHC API
+//Abre una conexion a la url, genera una promesa. La respuesta la recibe y la transforma en un formato json. 
+  const listaClientes = () => {
+    return fetch("http://localhost:3000/perfil").then((respuesta) => {
+      return respuesta.json();
+  })
+  }
 };
 
 listaClientes()

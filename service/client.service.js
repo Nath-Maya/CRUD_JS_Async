@@ -8,8 +8,7 @@ const crearNuevaLinea = (nombre, email) => {
    ${nombre}
    </td>
    <td>
-   ${email}
-   </td>
+   ${email}</td>
    <td>
      <ul class="table__button-control">
        <li>
@@ -30,6 +29,8 @@ const crearNuevaLinea = (nombre, email) => {
      </ul>
    </td>
    `;
+  linea.innerHTML = contenido;
+  return linea;
 };
 
 // const table = document.querySelector("[data-table]");
@@ -39,7 +40,7 @@ const table = document.querySelector("[data-table]");
 //*LISTA DE CLIENTES
 
 const listaClientes = () => {
-  const promise = new Promise(function (resolve, reject) {
+  const promise = new Promise((resolve, reject) => {
     //Abrir http (metodo,url)
     const http = new XMLHttpRequest(); //Crear comunicacion entre el Front-end y Back-end
     http.open("GET", "http://localhost:3000/perfil");
@@ -48,23 +49,21 @@ const listaClientes = () => {
 
     http.onload = () => {
       const response = JSON.parse(http.response); //transformar el texto con JSON. Cambiar respuesta de http para obtner un objeto
-      if(http.status >= 400) {
+      if (http.status >= 400) {
         reject(response);
       } else {
-      resolve(response);
+        resolve(response);
       }
     };
   });
-
   return promise;
 };
 
-listaClientes().then((data) => {
-  console.log(data);
-  data.forEach((perfil) => {
-    const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
-    table.appendChild(nuevaLinea);
-  });
-}).catch((error) => alert("Ocurrio un error"));
-
-
+listaClientes()
+  .then((data) => {
+    data.forEach((perfil) => {
+      const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
+      table.appendChild(nuevaLinea);
+    });
+  })
+  .catch((error) => alert("Ocurrió un error"));

@@ -31,7 +31,7 @@ const eliminarCliente = (id) => {
 //recibo el id de la url
 
 const detalleCliente = (id) => {
-  return fetch(`http://localhost:3000/perfil/${id}`).then( respuesta => console.log(respuesta));
+  return fetch(`http://localhost:3000/perfil/${id}`).then( respuesta => respuesta.json());
   };
 
 

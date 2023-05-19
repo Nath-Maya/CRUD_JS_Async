@@ -31,7 +31,7 @@ const eliminarCliente = (id) => {
 //recibo el id de la url
 
 const detalleCliente = (id) => {
-  return fetch(`http://localhost:3000/perfil/${id}`).then( respuesta => respuesta.json());
+  return fetch(`http://localhost:3000/perfil/${id}`).then( (respuesta) => respuesta.json());
   };
 
 
@@ -40,14 +40,15 @@ const detalleCliente = (id) => {
 
 const actualizarCliente = (nombre, email, id) => {
   return fetch(`http://localhost:3000/perfil/${id}`, {
+  // "http://localhost:3000/perfil/03df4297-a92f-4698-8898-616f3cfbaa5f"
   method: "PUT",
   headers: {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({ nombre, email})
-  .then((respuesta) => console.log(respuesta))
-  .catch((err) => console.log(err))
-});
+})
+.then((respuesta) => (respuesta))
+.catch((err) => console.log(err))
 };
 
 

@@ -7,7 +7,7 @@ const formulario = document.querySelector("[data-form]");
 const obtenerInformacion = () => {
   const url = new URL(window.location);
   // const id = url.searchParams.get("id");
-  const id = url.searchParams.get(id);
+  const id = url.searchParams.get('id');
   console.log(id);
 
   if (id === null) {
@@ -29,7 +29,7 @@ obtenerInformacion();
 formulario.addEventListener("submit", (evento) => {
    evento.preventDefault();
    const url = new URL(window.location);
-   const id = url.searchParams.get(id);
+   const id = url.searchParams.get('id');
  
    const nombre = document.querySelector("[data-nombre]").value;
    const email = document.querySelector("[data-email]").value;
